@@ -26,6 +26,11 @@ std::string mjx::Action::ToJson() const noexcept {
   return serialized;
 }
 
+mjx::Action::ToMessage(const std::string& json) {
+  auto status = google::protobuf::util::JsonStringToMessage(json, &proto_);
+  assert(status.ok());
+}
+
 bool Action::operator==(const Action& other) const noexcept {
   return google::protobuf::util::MessageDifferencer::Equals(proto_,
                                                             other.proto_);

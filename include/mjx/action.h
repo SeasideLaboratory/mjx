@@ -17,6 +17,7 @@ class Action {
   static Action SelectFrom(int action_idx,
                            const std::vector<Action>& legal_actions);
   std::string ToJson() const noexcept;
+  ToMessage(const std::string& json);
   int ToIdx() const noexcept;  // 0 ~ 180
 
   // accessors

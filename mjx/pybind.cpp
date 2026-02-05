@@ -32,6 +32,7 @@ PYBIND11_MODULE(_mjx, m) {
       .def(py::init<std::string>())
       .def("select_from", &mjx::Action::SelectFrom)
       .def("to_json", &mjx::Action::ToJson)
+      .def("to_message", &mjx::Action::ToMessage)
       .def("to_idx", &mjx::Action::ToIdx)
       .def("type", &mjx::Action::type)
       .def("_open", &mjx::Action::open)
