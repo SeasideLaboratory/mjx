@@ -26,7 +26,7 @@ std::string mjx::Action::ToJson() const noexcept {
   return serialized;
 }
 
-Action::ToMessage(const std::string& json) {
+Action Action::ToMessage(const std::string& json) {
   auto status = google::protobuf::util::JsonStringToMessage(json, &proto_);
   assert(status.ok());
 }
